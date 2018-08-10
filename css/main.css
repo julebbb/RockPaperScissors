@@ -86,6 +86,12 @@ textarea {
    Browser Upgrade Prompt
    ========================================================================== */
 
+@keyframes moveImg {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(20deg);}
+}
+
+
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
@@ -97,13 +103,110 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: gainsboro;
+}
+
+main {
+  max-width: 900px;
+  max-height: 800px;
+  margin: auto;
+}
+
+section:first-child {
+  position: absolute;
+  background-color: burlywood;
+  height: 100vh;
+  width: 100vw;
+  max-width: 900px;
+  align-items: center;
+}
+
+.gameStart, section:first-child  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section:first-child div {
+  padding: 20px;
+
+  background: aliceblue;
+  border-radius: 10px;
+  border: 1px solid khaki;
+}
+
+section:first-child form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section:first-child h2 {
+  display: none;
+}
+
+input[type=text] {
+  width: 100%;
+  margin: 10px;
+  border: 1px dashed burlywood;
+  padding: 11px;
+}
+
+input[type=submit] {
+  border: 2px solid burlywood;
+  padding: 6px 15px;
+  background: khaki;
+}
+
+.gameStart {
+ margin-left: 15%;
+}
+
+.gameStart > div:first-child img {
+  display: block;
+  margin: auto;
+  height: 79.5vh;
+  max-height: 600px;
+  min-height: 100px; 
+}
+
+.gameStart > div:last-child  {
+  width: 35%;
+  background-color: burlywood;
+}
+
+.gameStart > div:first-child  {
+  width: 65%;
+}
+
+.gameStart .talkPc {
+  width: 100%;
+  height: 20vh;
+  background: aliceblue;
+  border: 1px solid burlywood;
+}
+
+.gameStart .talkPc p {
+  text-align: center;
+}
+
+.gameStart > div:last-child img {
+  width: 120px;
+  display: block;
+  margin: 23% auto;
+  cursor: pointer;
+}
+
+.gameStart > div:last-child img:hover {
+  animation: 0.2s linear 0s infinite none alternate moveImg;
+
+}
 
 
-
-
-
-
-
+.
 
 
 
