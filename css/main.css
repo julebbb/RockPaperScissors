@@ -109,19 +109,34 @@ body, html {
   background-color: gainsboro;
 }
 
+body {
+  display: flex;
+  height: 100vh;
+}
+
 main {
+  width: 100%;
   max-width: 900px;
-  max-height: 800px;
+  max-height: 755px;
   margin: auto;
+  position: relative;
 }
 
 section:first-child {
   position: absolute;
   background-color: burlywood;
   height: 100vh;
+  max-height: 755px;
   width: 100vw;
   max-width: 900px;
   align-items: center;
+  z-index: 1;
+  transition: 0.5s ease-in;
+}
+
+section:first-child h2 {
+  text-align: center;
+  line-height: 57px;
 }
 
 .gameStart, section:first-child  {
@@ -159,6 +174,7 @@ input[type=submit] {
   border: 2px solid burlywood;
   padding: 6px 15px;
   background: khaki;
+  cursor: pointer;
 }
 
 .gameStart {
@@ -170,7 +186,7 @@ input[type=submit] {
   margin: auto;
   height: 79.5vh;
   max-height: 600px;
-  min-height: 100px; 
+  min-height: 100px;
 }
 
 .gameStart > div:last-child  {
@@ -180,11 +196,13 @@ input[type=submit] {
 
 .gameStart > div:first-child  {
   width: 65%;
+  max-height: 755px;
 }
 
 .gameStart .talkPc {
   width: 100%;
   height: 20vh;
+  max-height: 153px;
   background: aliceblue;
   border: 1px solid burlywood;
 }
@@ -198,11 +216,17 @@ input[type=submit] {
   display: block;
   margin: 23% auto;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
 }
 
 .gameStart > div:last-child img:hover {
   animation: 0.2s linear 0s infinite none alternate moveImg;
 
+}
+
+#gameEnd img {
+  height: 100vh;
 }
 
 
