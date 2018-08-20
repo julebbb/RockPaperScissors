@@ -106,18 +106,12 @@ textarea {
 body, html {
   margin: 0;
   padding: 0;
-  background-color: gainsboro;
+  background-color: #f3c445;
 }
 
 body {
   display: flex;
   height: 100vh;
-}
-header {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
 }
 
 main {
@@ -128,9 +122,13 @@ main {
   position: relative;
 }
 
+h1 {
+  color: #a2da14;
+}
+
 section:first-child {
   position: absolute;
-  background-color: burlywood;
+  background-color: #a2754c;
   height: 99.9vh;
   max-height: 755px;
   width: 100vw;
@@ -138,11 +136,15 @@ section:first-child {
   align-items: center;
   z-index: 1;
   transition: 0.5s ease-in;
+  flex-direction: column;
+  text-align: center;
+
 }
 
 section:first-child h2 {
   text-align: center;
   line-height: 57px;
+  margin: 0;
 }
 
 .gameStart, section:first-child  {
@@ -154,9 +156,7 @@ section:first-child h2 {
 section:first-child div {
   padding: 20px;
 
-  background: aliceblue;
-  border-radius: 10px;
-  border: 1px solid khaki;
+  background: #a2da14;
 }
 
 section:first-child form {
@@ -235,9 +235,23 @@ input[type=submit] {
   height: 100vh;
 }
 
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
 
-.
 
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+
+ }
 
 
 
