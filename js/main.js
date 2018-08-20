@@ -33,6 +33,7 @@ function gameBegin() {
   if (pseudo.value === "") {
     pseudo.style.border = "solid 1px red";
     pseudo.style.boxShadow = "1px 1px 7px red";
+    pseudo.placeholder = "Veuillez remplir ce champs";
   } else {
     //Add in userName the value of the input
     userName.innerHTML = pseudo.value;
@@ -56,6 +57,7 @@ function gameBegin() {
       document.getElementById("gameBegin").style.width = "15%";
       document.getElementsByTagName("form")[0].style.display = "none";
       document.getElementsByTagName('img')[0].style.display = "none";
+
       if (pseudo.value.length < 5) {
         userName.style.display = "block";
       }
@@ -156,13 +158,16 @@ function game(choice) {
 
     gameBeginSection.style.display = "none";
     gameStartSection.style.display = "none";
-    gameEndSection.style.display = 'block';
+    gameEndSection.style.display = 'flex';
+    document.getElementsByTagName('h2')[1].innerHTML = "Oh non ! Tu as gagné !";
 
   } else if (computerResult === 3) {
 
     gameBeginSection.style.display = "none";
     gameStartSection.style.display = "none";
-    gameEndSection.style.display = 'block';
+    gameEndSection.style.display = 'flex';
+    document.getElementsByTagName('h2')[1].innerHTML = "Ouiii ! Je t'ai eu ! Revanche ?";
+
 
   }
 }
