@@ -113,6 +113,12 @@ body {
   display: flex;
   height: 100vh;
 }
+header {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
 
 main {
   width: 100%;
@@ -125,7 +131,7 @@ main {
 section:first-child {
   position: absolute;
   background-color: burlywood;
-  height: 100vh;
+  height: 99.9vh;
   max-height: 755px;
   width: 100vw;
   max-width: 900px;

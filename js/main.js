@@ -5,6 +5,7 @@ var buttonName = document.getElementsByTagName('input')[1];
 //Take the span with the id userName
 var userName = document.getElementById("userName");
 
+
 //Take h2 with the id score
 var score = document.getElementById('score');
 
@@ -33,6 +34,8 @@ function gameBegin() {
   score.parentNode.style.borderRadius = "0";
   //Make display score
   score.style.display = "block";
+  document.getElementsByTagName('p')[0].style.display = "none";
+  document.getElementsByTagName('h1')[0].style.display = "none";
 
   if (window.innerWidth < 900 ) {
     document.getElementById("gameBegin").style.height = "15%";
@@ -44,6 +47,9 @@ function gameBegin() {
     document.getElementById("gameBegin").style.width = "15%";
     document.getElementsByTagName("form")[0].style.display = "none";
     document.getElementsByTagName('img')[0].style.display = "none";
+    if (pseudo.value.length < 5) {
+      userName.style.display = "block";
+    }
   }
 
 }
