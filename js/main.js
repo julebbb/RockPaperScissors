@@ -4,7 +4,7 @@ var buttonName = document.getElementsByTagName('input')[1];
 
 //Take the span with the id userName
 var userName = document.getElementById("userName");
-var replyComputer = document.getElementsByTagName('p')[1];
+var replyComputer = document.getElementsByTagName('h4')[0];
 //Take h2 with the id score
 var score = document.getElementById('score');
 
@@ -81,7 +81,7 @@ for (let i = 0; i < userChoice.length; i++) {
   userChoice[i].addEventListener("click", function() {
 
     game(this);
-    
+
   });
 }
 
