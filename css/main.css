@@ -107,11 +107,13 @@ body, html {
   margin: 0;
   padding: 0;
   background-color: white;
+  color: #745450;
 }
 
 body {
   display: flex;
   height: 100vh;
+  text-align: center;
 }
 
 main {
@@ -123,8 +125,13 @@ main {
   overflow: hidden;
 }
 
+/*----------------------------------------------------------------------------------
+----------------------------Index menu----------------------------------------------
+-----------------------------------------------------------------------------*/
+
 h1 {
   color: rgb(243, 196, 69);
+  margin: 0;
 }
 
 section:first-child {
@@ -146,11 +153,19 @@ section:first-child h2 {
   text-align: center;
   line-height: 57px;
   margin: 0;
+  color: #745450;
 }
+
+section:first-child img {
+  height: 40%;
+  position: relative;
+  top: 5%;
+}
+
 
 .gameStart, section:first-child  {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -175,12 +190,22 @@ section:first-child h2 {
   display: none;
 }
 
+section:first-child p {
+  color: #745450;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
 input[type=text] {
   width: 100%;
   margin: 10px;
   border: 1px dashed burlywood;
   background-color: rgba(113, 50, 74, 0.5);
-  padding: 15px;
+  padding: 10px;
+  color: rgb(243, 196, 69);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 input[type=text]:focus {
@@ -188,17 +213,23 @@ input[type=text]:focus {
 }
 
 input[type=submit] {
-  border: 2px solid burlywood;
+  border: none;
   padding: 15px 20px;
-  background: khaki;
+  background: rgb(250, 179, 188);
   cursor: pointer;
   font-size: 1.2rem;
-
+  color: #745450;
 }
 
 input[type=submit]:active {
-  background: green;
+  background: rgb(162, 218, 20);
+  box-shadow: 1px 1px 5px black inset;
 }
+
+
+/*---------------------------------------------------------------------------------
+----------------------------Game interface-----------------------------------------
+-----------------------------------------------------------------------------*/
 
 .gameStart {
   width: 100%;
@@ -207,6 +238,7 @@ input[type=submit]:active {
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-between;
+  background: rgb(162, 218, 20);
 }
 
 .gameStart > div:first-child img {
@@ -219,23 +251,23 @@ input[type=submit]:active {
 
   background-color: #a2754c;
   display: flex;
-width: 100%;
-height: 20vh;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  width: 100%;
+  height: 20vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .gameStart > div:first-child  {
   max-height: 755px;
   margin-top: 50px;
-overflow: hidden;
-height: 80vh;
-position: relative;
-width: 100%;
-display: flex;
-align-items: end;
-justify-content: center;
+  overflow: hidden;
+  height: 80vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
 }
 
 .gameStart .talkPc {
@@ -250,6 +282,8 @@ justify-content: center;
 
 .gameStart .talkPc p {
   text-align: center;
+  font-size: 1.2rem;
+  color: #745450;
 }
 
 .gameStart > div:last-child img {
@@ -263,34 +297,45 @@ justify-content: center;
 
 }
 
-.gameStart > div:last-child img:hover {
-  animation: 0.2s linear 0s infinite none alternate moveImg;
 
-}
+
+
+/*---------------------------------------------------------------------------------
+----------------------------Game end interface-----------------------------------------
+-----------------------------------------------------------------------------*/
 
 .gameEnd {
   flex-direction: column;
   align-items: center;
   height: 100vh;
   justify-content: space-between;
+  background: rgb(162, 218, 20);
+  max-width: 900px;
+  max-height: 744px;
+  border-left: 5px dashed #a2754c;
+  border-right: 5px dashed #a2754c;
 }
 
 .gameEnd a {
-  background: antiquewhite;
+  background: rgb(250, 179, 188);
   font-size: 1.5rem;
   margin: 15px 0;
+  color: #745450;
   padding: 10px;
   text-decoration: none;
   transition: 0.5s ease;
-  border: 1px solid lightgreen;
+  border: none;
   border-radius: 2px;
 }
 
-
+.gameEnd a:active {
+  background: rgb(243, 196, 69);
+  box-shadow: 1px 1px 5px black inset;
+}
 
 .gameEnd img {
-  width: 100%;
-  max-width: 400px;
+  height: 100%;
+  max-height: 400px;
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -338,8 +383,12 @@ justify-content: center;
   }
 
   .gameEnd a:hover {
-  background: green;
-  color: white;
+    background: rgb(243, 196, 69);
+  }
+
+  .gameStart > div:last-child img:hover {
+    animation: 0.2s linear 0s infinite none alternate moveImg;
+
   }
 
  }
