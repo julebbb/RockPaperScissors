@@ -111,7 +111,6 @@ body, html {
 }
 
 body {
-  display: flex;
   height: 100vh;
   text-align: center;
 }
@@ -124,6 +123,13 @@ main {
   position: relative;
   overflow: hidden;
 }
+
+/*===============  Repete action ================*/
+
+body, .gameStart, section:first-child, section:first-child form, .gameStart > div:last-child, .gameStart > div:first-child {
+  display: flex;
+}
+
 
 /*----------------------------------------------------------------------------------
 ----------------------------Index menu----------------------------------------------
@@ -164,7 +170,6 @@ section:first-child img {
 
 
 .gameStart, section:first-child  {
-  display: flex;
   flex-wrap: nowrap;
   justify-content: center;
 }
@@ -181,7 +186,6 @@ section:first-child div {
 }
 
 section:first-child form {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -208,6 +212,10 @@ input[type=text] {
   text-align: center;
 }
 
+input[type=text]::placeholder {
+  color: green;
+}
+
 input[type=text]:focus {
  background-color: rgba(113, 50, 74, 0.3);
 }
@@ -219,6 +227,7 @@ input[type=submit] {
   cursor: pointer;
   font-size: 1.2rem;
   color: #745450;
+  transition: 0.5s ease;
 }
 
 input[type=submit]:active {
@@ -248,9 +257,7 @@ input[type=submit]:active {
 }
 
 .gameStart > div:last-child  {
-
   background-color: #a2754c;
-  display: flex;
   width: 100%;
   height: 20vh;
   flex-direction: row;
@@ -338,14 +345,17 @@ input[type=submit]:active {
   max-height: 400px;
 }
 
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
 
-
- }
-
-/* Extra large devices (large desktops, 1200px and up)*/
+/* Large devices */
 @media (min-width: 900px) {
+
+  input[type=submit]:hover {
+    background-color: rgb(162, 218, 20);
+  }
+
+  .gameStart .talkPc p {
+    font-size: 1.7rem;
+  }
 
   .gameStart {
 
@@ -360,6 +370,7 @@ input[type=submit]:active {
     flex-direction: column;
 
   }
+
   .gameStart > div:first-child  {
     width: 85%;
     margin-left: 15%;

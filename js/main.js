@@ -29,6 +29,7 @@ buttonName.addEventListener("click", gameBegin);
 
 //Fuction for move section
 function gameBegin() {
+
   if (pseudo.value === "") {
     pseudo.style.border = "solid 1px red";
     pseudo.style.boxShadow = "1px 1px 7px red";
@@ -42,48 +43,59 @@ function gameBegin() {
     document.getElementsByTagName('p')[0].style.display = "none";
     document.getElementsByTagName('h1')[0].style.display = "none";
 
+
     if (window.innerWidth < 900 ) {
       score.parentNode.style.padding = "0";
       score.parentNode.style.width = "100%";
       score.style.fontSize = "1rem";
 
+      //Change height to section game begin if window < 900px
       document.getElementById("gameBegin").style.height = "50px";
       document.getElementById("gameBegin").style.width = "100%";
       document.getElementsByTagName("form")[0].style.display = "none";
       document.getElementsByTagName('img')[0].style.display = "none";
 
     } else {
+
+      //Change width to section game begin if window > 900px
       document.getElementById("gameBegin").style.width = "15%";
       document.getElementsByTagName("form")[0].style.display = "none";
       document.getElementsByTagName('img')[0].style.display = "none";
 
       if (pseudo.value.length < 5) {
+
+        //That for score and userName not in even line
         userName.style.display = "block";
+
       }
+
     }
   }
 
 
 }
 
-
+//For repete click action
 for (let i = 0; i < userChoice.length; i++) {
+
   userChoice[i].addEventListener("click", function() {
+
     game(this);
+    
   });
 }
 
 function game(choice) {
+
   var computerChoiceName = ['rock', 'paper', 'scissors'];
   var computerChoice = computerChoiceName[Math.floor(Math.random() * computerChoiceName.length)];
-  // var computerChoice = 'scissors'
 
   //Computer win
   if (computerChoice === 'rock' && choice.id === 'scissors') {
 
     changeImg.src = "img/folamiRockWin.gif";
     changeImg.alt = "Folami fais pierre et gagne";
-    replyComputer.innerHTML = "Hi hi hi ! Je t'écrabouille !"
+    replyComputer.innerHTML = "Hi hi hi ! Je t'ai eu !"
 
     computerResult++;
 
@@ -91,7 +103,7 @@ function game(choice) {
 
     changeImg.src = "img/folamiScissorsWin.gif";
     changeImg.alt = "Folami fais ciseaux et gagne";
-    replyComputer.innerHTML = "Hi hi hi ! Je te découpe !"
+    replyComputer.innerHTML = "Hi hi hi ! Je t'ai eu !"
 
     computerResult++;
 
@@ -99,7 +111,7 @@ function game(choice) {
 
     changeImg.src = "img/folamiPaperWin.gif";
     changeImg.alt = "Folami fais papier et gagne";
-    replyComputer.innerHTML = "Hi hi hi ! Je t'emprisonne !"
+    replyComputer.innerHTML = "Hi hi hi ! Je t'ai eu !"
 
     computerResult++;
   }
@@ -134,42 +146,50 @@ function game(choice) {
 
     changeImg.src = "img/folamiRockEgal.gif";
     changeImg.alt = "Vous êtes a égalité";
-    replyComputer.innerHTML = "Ah on a pareil !"
+    replyComputer.innerHTML = "Ah ah ! on a pareil !"
 
 
   } else if (computerChoice === 'scissors' && choice.id === 'scissors') {
 
     changeImg.src = "img/folamiScissorsEgal.gif";
     changeImg.alt = "Vous êtes a égalité";
-    replyComputer.innerHTML = "Ah on a pareil !"
+    replyComputer.innerHTML = "Ah ah ! on a pareil !"
 
   } else if (computerChoice === 'paper' && choice.id === 'paper') {
 
     changeImg.src = "img/folamiPaperEgal.gif";
     changeImg.alt = "Vous êtes a égalité";
-    replyComputer.innerHTML = "Ah on a pareil !"
+    replyComputer.innerHTML = "Ah ah ! on a pareil !"
 
   }
 
   score.innerHTML = "<span>Score:</span> " + pseudo.value + " " + userResult + " Folami " + computerResult;
 
+  //If user win three times
   if (userResult === 3) {
 
     gameBeginSection.style.display = "none";
     gameStartSection.style.display = "none";
+
     gameEndSection.style.display = 'flex';
+
+    //Change text in p from section end
     document.getElementsByTagName('h2')[1].innerHTML = "Oh non ! Tu as gagné !";
     document.getElementsByClassName('endImg')[0].src = "img/folamiLose.gif";
 
   } else if (computerResult === 3) {
+    //If computer win three times
+
 
     gameBeginSection.style.display = "none";
     gameStartSection.style.display = "none";
+
     gameEndSection.style.display = 'flex';
+
+    //Change text in p from section end
     document.getElementsByTagName('h2')[1].innerHTML = "Ouiii ! Je t'ai eu ! Revanche ?";
     document.getElementsByClassName('endImg')[0].src = "img/folamiWin.gif";
 
-
-
   }
+
 }
