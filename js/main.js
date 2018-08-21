@@ -5,7 +5,6 @@ var buttonName = document.getElementsByTagName('input')[1];
 //Take the span with the id userName
 var userName = document.getElementById("userName");
 var replyComputer = document.getElementsByTagName('p')[1];
-
 //Take h2 with the id score
 var score = document.getElementById('score');
 
@@ -160,6 +159,7 @@ function game(choice) {
     gameStartSection.style.display = "none";
     gameEndSection.style.display = 'flex';
     document.getElementsByTagName('h2')[1].innerHTML = "Oh non ! Tu as gagné !";
+    document.getElementsByClassName('endImg')[0].src = "img/folamiLose.gif";
 
   } else if (computerResult === 3) {
 
@@ -167,6 +167,8 @@ function game(choice) {
     gameStartSection.style.display = "none";
     gameEndSection.style.display = 'flex';
     document.getElementsByTagName('h2')[1].innerHTML = "Ouiii ! Je t'ai eu ! Revanche ?";
+    document.getElementsByClassName('endImg')[0].src = "img/folamiWin.gif";
+
 
 
   }
