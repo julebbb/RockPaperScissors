@@ -130,10 +130,10 @@ body, .gameStart, section:first-child, section:first-child form, .gameStart > di
 }
 
 /*Flex*/
-section:first-child, .gameStart, .gameEnd {
+section:first-child, .gameStart, .gameEnd, .gameStart {
   flex-direction: column;
 }
-.gameStart, .gameStart > div:last-child {
+.gameStart > div:last-child {
   flex-direction: row;
 }
 
@@ -352,7 +352,6 @@ input[type=submit]:active {
   }
 
   .gameStart {
-
     flex-direction: row;
     justify-content: flex-start;
   }
