@@ -142,12 +142,12 @@ input[type=text], main, .gameStart, .gameStart > div:first-child img, .gameStart
   width: 100%;
 }
 /*Height*/
-section:first-child, .gameStart > div:first-child, .gameStart > div:last-child, .gameStart > div:first-child {
+section:first-child, .gameStart > div:first-child, .gameStart > div:last-child, .gameStart > div:first-child, .gameEnd, .gameStart {
   max-height: 755px;
 }
 
 /*Colors*/
-h1, input[type=text], input[type=text]::placeholder {
+h1, input[type=text], input[type=text]::placeholder, .gameEnd h2 {
   color: rgb(243, 196, 69);
 }
 
@@ -155,7 +155,7 @@ body, input[type=submit], .gameEnd a {
   color: #745450;
 }
 
-section:first-child, .gameStart > div:last-child {
+section:first-child, .gameStart > div:last-child, .gameEnd {
   background-color: #a2754c;
 }
 
@@ -265,7 +265,7 @@ input[type=submit]:active {
   height: 100vh;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background: rgb(162, 218, 20);
+  background: rgb(162, 214, 91);
 }
 
 .gameStart > div:first-child img {
@@ -312,11 +312,10 @@ input[type=submit]:active {
 .gameEnd {
   align-items: center;
   height: 100vh;
-  justify-content: space-between;
-  background: rgb(162, 218, 20);
+  justify-content: space-around;
   max-width: 900px;
-  border-left: 5px dashed #a2754c;
-  border-right: 5px dashed #a2754c;
+  border-left: 5px dashed rgb(162, 218, 20);
+  border-right: 5px dashed rgb(162, 218, 20);
 }
 
 .gameEnd a {
